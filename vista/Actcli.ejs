@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar mis Datos</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actdatoscli.js"></script>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./css/style copy.css">
+</head>
+<body>
+    <h1>Actualizar mis Datos</h1>
+    <table class="registros">
+        <thead>
+            <tr> 
+                <th>Usuario</th>
+                <th>Clave</th>
+                <th>Actualizar</th>       
+            </tr>
+        </thead>
+        <tbody>
+            <% adatos.forEach(function (adatos){ %>
+        <tr>
+            <input type="hidden" value="<%=adatos.doccli%>" name="doccli" id="doc" class="doc">
+            <td><input type="text" value="<%=adatos.nomusu%>" name="nomusu" id="usu" class="usu"></td>
+            <td><input type="text" value="<%=adatos.clave%>" name="clave" id="cla" class="cla"></td>
+            <td><input type="submit" value="Actualizar" name="btnactcl" id="btnactcl" class="btnactcl"></td>
+        </tr>
+        <%})%>
+    </tbody>
+
+    </table>
+
+</body>
+</html>

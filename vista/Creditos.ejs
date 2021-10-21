@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actualizarcredito.js"></script>
+    <script src="./js/eliminarcredito.js"></script>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./css/style copy.css">
+</head>
+<body>
+    <h1>Creditos</h1>
+
+  <div class="form-register">
+        <img src="img/logo2.jpg" class="img" alt="Avatar Image">
+        <form action="/frminsertarcre" method="POST" >
+          <h4>Formulario Para Creditos</h4>
+          <label for="username">Codigo de Credito</label>
+          <input class="controls" type="text" name="codigocredito"  placeholder="Codigo de Credito">
+          <label for="username">Documento</label>
+          <input class="controls" type="text" name="doccli"  placeholder="Documento">
+          <label for="username">Codigo de Linea</label>
+          <input class="controls" type="text" name="codlinea"  placeholder="Codigo de Linea">
+          <label for="username">Monto prestado</label>
+          <input class="controls" type="text" name="montoprestado"  placeholder="Monto prestado">
+          <label for="username">Fecha de Aprobacion</label>
+          <input class="controls" type="date" name="fechaaproba"  placeholder="Fecha de Aprobacion">
+          <label for="username">PLazo</label>
+          <input class="controls" type="text" name="plazo"  placeholder="PLazo">
+          <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+          <button class="button" type="submit">Registrar</button> 
+        </form>
+       </div>
+       <br><br>
+       <table class="registros">
+        <thead>
+            <tr> 
+                <th>Codigo de Credito</th>
+                <th>Documento</th>
+                <th>Codigo de Linea</th>
+                <th>Monto Prestado</th>
+                <th>Fecha de Aprobacion</th>
+                <th>PLazo</th>
+                <th>Actualizar</th>
+                <th>Eliminar</th>        
+            </tr>
+        </thead>
+        <tbody>
+            <% datoscre.forEach(function (datoscre){ %>
+        <tr>
+            <td><input type="text" value="<%=datoscre.codigocredito%>" name="codigocredito" id="codigocredito" class="codigocredito" ></td>
+            <td><input type="text" value="<%=datoscre.doccli%>" name="doccli" id="doccli" class="doccli"  readonly></td>
+            <td><input type="text" value="<%=datoscre.codlinea%>" name="codlinea" id="codlinea" class="codlinea" readonly ></td>
+            <td><input type="text" value="<%=datoscre.montoprestado%>" name="montoprestado" id="montoprestado" class="montoprestado" ></td>
+            <td><input type="text" value="<%=datoscre.fechaaproba%>" name="fechaaproba" id="fechaaproba" class="fechaaproba"  ></td>
+            <td><input type="text" value="<%=datoscre.plazo%>" name="plazo" id="plazo" class="plazo" ></td>
+
+            <td><input type="submit" value="Actualizar" name="btnactcreditos" id="btnactcreditos" class="btnactcreditos" ></td>
+            <td><input type="submit" value="Eliminar" name="btnelicred" id="btnelicred" class="btnelicred" ></td>
+
+        </tr>
+        <%})%>
+    </tbody>
+    </table>
+
+
+</body>
+</html>

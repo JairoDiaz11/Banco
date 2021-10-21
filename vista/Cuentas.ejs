@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuentas</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actualizar.js"></script>
+    <script src="./js/elicuentas.js"></script>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./css/style copy.css">
+</head>
+<body>
+   
+
+   <div class="form-register">
+    <img src="img/logo2.jpg" class="img" alt="Avatar Image">
+    <form action="/frminsertarcuentas" method="POST" >
+      <h4>Formulario Para Cuentas</h4>
+      <label for="username">Codigo de Cuenta</label>
+      <input class="controls" type="number" name="codcuenta" id="nombres" placeholder="Codigo de Cuenta ">
+      <label for="username">Numero de Documento</label>
+      <input class="controls" type="text" name="doccli" id="apellidos" placeholder="Documento">
+      <label for="username">Saldo en cuenta</label>
+      <input class="controls" type="text" name="montocuenta" id="correo" placeholder="Saldo">
+      <label for="username">Tipo de cuenta</label>
+      <input class="controls" type="text" name="tipocuenta" id="rol" placeholder="Tipo">
+    
+      <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+      <button class="button" type="submit">Registrar</button> 
+    </form>
+   </div>
+    <br>
+    <br>
+    <table class="registros">
+      <thead>
+          <tr> 
+              <th>Numero de Cuenta</th>
+              <th>Documento</th>
+              <th>Saldo en la Cuenta</th>
+              <th>Tipo de cuenta</th>
+              <th>Transferencias</th>
+              <th>Eliminar</th>
+                     
+          </tr>
+      </thead>
+      <tbody>
+          <% datoscuentas.forEach(function (datoscuentas){ %>
+      <tr>
+          <td><input type="text" value="<%=datoscuentas.nocuenta%>" name="nocuenta" id="nocuenta" class="nocuenta" readonly></td>
+          <td><input type="text" value="<%=datoscuentas.doccli%>" name="doccli" id="doccli" class="doccli" readonly></td>
+          <td><input type="text" value="<%=datoscuentas.montocuenta%>" name="montocuenta" id="montocuenta" class="montocuenta" readonly></td>
+          <td><input type="text" value="<%=datoscuentas.tipocuenta%>" name="tipocuenta" id="tipocuenta" class="tipocuenta"readonly></td>
+          <td><input type="text" value="<%=datoscuentas.transferencias%>" name="transferencias" id="transferencias" class="transferencias"readonly></td>
+          <td><input type="submit" value="Eliminar" name="btnelicuentas" id="btnelicuentas" class="btnelicuentas"></td>
+
+          
+      </tr>
+      <%})%>
+  </tbody>
+  </table>
+
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actualizarlcredito.js"></script>
+    <script src="./js/eliminarlcredito.js"></script>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./css/style copy.css">
+</head>
+<body>
+    <h1>Lineas de Credito</h1>
+
+  <div class="form-register">
+        <img src="img/logo2.jpg" class="img" alt="Avatar Image">
+        <form action="/frminsertarlcre" method="POST" >
+          <h4>Formulario Para Linea de Creditos</h4>
+          <label for="username">Codigo de Linea</label>
+          <input class="controls" type="text" name="codlinea"  placeholder="Codigo de Linea">
+          <label for="username">Nombre de Linea</label>
+          <input class="controls" type="text" name="nomlinea"  placeholder="Numero de Linea">
+          <label for="username">Monto maximo de Credito</label>
+          <input class="controls" type="text" name="montomaxicredito"  placeholder="Monto maximo de Credito">
+          <label for="username">PLazo maximo de Credito</label>
+          <input class="controls" type="text" name="plazomaxcred"  placeholder="PLazo maximo de Credito">
+          <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+          <button class="button" type="submit">Registrar</button> 
+        </form>
+       </div>
+       <br><br>
+       <table class="registros">
+        <thead>
+            <tr> 
+                <th>Codigo de Linea</th>
+                <th>Nombre de Linea</th>
+                <th>Monto Maximo de Credito</th>
+                <th>PLazo maximo Credito</th>
+                <th>Actualizar</th>
+                <th>Eliminar</th>        
+            </tr>
+        </thead>
+        <tbody>
+            <% datoslcre.forEach(function (datoslcre){ %>
+        <tr>
+            <td><input type="text" value="<%=datoslcre.codlinea%>" name="codlinea" class="codlinea" id="codlinea" readonly></td>
+            <td><input type="text" value="<%=datoslcre.nomlinea%>" name="nomlinea" class="nomlinea" id="nomlinea" ></td>
+            <td><input type="text" value="<%=datoslcre.montomaxicredito%>" name="montomaxicredito" class="montomaxicredito" id="montomaxicredito" ></td>
+            <td><input type="text" value="<%=datoslcre.plazomaxcred%>" name="plazomaxcred" class="plazomaxcred" id="plazomaxcred"  ></td>
+        
+            
+            <td><input type="submit" value="Actualizar" name="btnactli"  id="btnactli" class="btnactli" ></td>
+            <td><input type="submit" value="Eliminar" name="btnelili" id="btnelili" class="btnelili" ></td>
+
+        </tr>
+        <%})%>
+    </tbody>
+    </table>
+</body>
+</html>

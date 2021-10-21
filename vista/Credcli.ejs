@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actualizar.js"></script>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./css/style copy.css">
+</head>
+<body>
+    <h1>Consultar mis Creditos</h1>
+    <table class="registros">
+        <thead>
+            <tr> 
+                <th>Codigo de Credito</th>
+                <th>Documento</th>
+                <th>Codigo de Linea</th>
+                <th>Monto Prestado</th>
+                <th>Fecha de Aprobacion</th>
+                <th>PLazo</th>
+       
+            </tr>
+        </thead>
+        <tbody>
+            <% datoscrec.forEach(function (datoscrec){ %>
+        <tr>
+            <td><input type="text" value="<%=datoscrec.codigocredito%>" name="codigocredito" readonly></td>
+            <td><input type="text" value="<%=datoscrec.doccli%>" name="doccli" readonly></td>
+            <td><input type="text" value="<%=datoscrec.codlinea%>" name="codlinea" readonly></td>
+            <td><input type="text" value="<%=datoscrec.montoprestado%>" name="montoprestado"  readonly></td>
+            <td><input type="text" value="<%=datoscrec.fechaaproba%>" name="fechaaproba"  readonly></td>
+            <td><input type="text" value="<%=datoscrec.plazo%>" name="plazo" readonly></td>
+
+
+        </tr>
+        <%})%>
+    </tbody>
+    </table>
+</body>
+</html>

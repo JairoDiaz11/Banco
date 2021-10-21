@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuentas</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/retirar.js"></script>
+    <script src="./js/consignar.js"></script>
+    <script src="./js/transferir.js"></script>
+    <script src="./js/recibir.js"></script>
+    
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./css/style copy.css">
+</head>
+<body>
+    <h1>Mi cuenta</h1>
+   
+    <table class="registros">
+      <thead>
+          <tr> 
+              <th>Numero de Cuenta</th>
+              <th>Documento</th>
+              <th>Saldo en la Cuenta</th>
+              <th>Tipo de cuenta</th>
+              <th>Retirar</th>
+              <th>Consignar</th>
+              <th>Transferir</th>
+              <th>Recibir Transferencias</th>
+
+                     
+          </tr>
+      </thead>
+      <tbody>
+          <% cdatoscuentas.forEach(function (cdatoscuentas){ %>
+      <tr>
+          <td><input type="text" value="<%=cdatoscuentas.nocuenta%>" name="nocuenta" id="nocuenta" class="nocuenta" readonly></td>
+          <td><input type="text" value="<%=cdatoscuentas.doccli%>" name="doccli" id="doccli" class="doccli" readonly></td>
+          <td><input type="text" value="<%=cdatoscuentas.montocuenta%>" name="montocuenta" id="montocuenta" class="montocuenta" readonly></td>
+          <td><input type="text" value="<%=cdatoscuentas.tipocuenta%>" name="tipocuenta" id="tipocuenta" class="tipocuenta" readonly></td>
+
+          <input type="hidden" value="<%=cdatoscuentas.transferencias%>" name="transferencias" id="transferencias" class="transferencias" readonly>
+
+          <td><input type="submit" value="Retirar" name="btnreti" id="btnreti" class="btnreti"></td>
+          <td><input type="submit" value="Consignar" name="btnconsig" id="btnconsig" class="btnconsig"></td>
+          <td><input type="submit" value="Transferir" name="btntrans" id="btntrans" class="btntrans"></td>
+          <td><input type="submit" value="Recibir Transferencias" name="btnre" id="btnre" class="btnre"></td>
+          
+      </tr>
+      <%})%>
+  </tbody>
+  </table>
+
+  </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actualizarcliente.js"></script>
+    <script src="./js/eliminarcliente.js"></script>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./css/style copy.css">
+</head>
+<body>
+    <h1>E Clientes</h1>
+
+    <div class="form-register">
+        <img src="img/logo2.jpg" class="img" alt="Avatar Image">
+        <form action="/frminsertarc" method="POST" >
+          <h4>Formulario Para Clientes</h4>
+          <label for="username">Nombres</label>
+          <input class="controls" type="text" name="nomcli" id="nombres" placeholder="Nombres ">
+          <label for="username">Documento</label>
+          <input class="controls" type="text" name="doccli" id="documento" placeholder="Documento">
+          <label for="username">Apellidos</label>
+          <input class="controls" type="text" name="apecli" id="apellidos" placeholder="Apellidos">
+          <label for="username">Correo</label>
+          <input class="controls" type="text" name="correocli" id="correo" placeholder="Correo">
+          <label for="username">Celular</label>
+          <input class="controls" type="text" name="celulra" id="Celular" placeholder="Celular">
+          <label for="username">Sexo</label>
+          <input class="controls" type="text" name="sexo" id="Sexo" placeholder="Sexo">
+          <label for="username">Fecha de nacimiento</label>
+          <input class="controls" type="date" name="fechanacli" id="fnacimiento" placeholder="Fecha de Nacimiento">
+          <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+          <button class="button" type="submit">Registrar</button> 
+        </form>
+       </div>
+       <br><br>
+       <table class="registros">
+        <thead>
+            <tr> 
+                <th>Nombres</th>
+                <th>Documento</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Celular</th>
+                <th>Sexo</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Actualizar</th>
+                <th>Eliminar</th>        
+            </tr>
+        </thead>
+        <tbody>
+            <% datosc.forEach(function (datosc){ %>
+        <tr>
+            <td><input type="text" value="<%=datosc.nomcli%>" name="nomcli" id="nomcli" class="nomcli"></td>
+            <td><input type="text" value="<%=datosc.doccli%>" name="doccli" id="doccli" class="doccli" readonly></td>
+            <td><input type="text" value="<%=datosc.apecli%>" name="apecli" id="apecli" class="apecli"></td>
+            <td><input type="text" value="<%=datosc.correocli%>" name="correocli" id="correocli" class="correocli" ></td>
+            <td><input type="text" value="<%=datosc.celulra%>" name="celulra" id="celulra" class="celulra" ></td>
+            <td><input type="text" value="<%=datosc.sexo%>" name="sexo" id="sexo" class="sexo" ></td>
+            <td><input type="text" value="<%=datosc.fechanacli%>" name="fechanacli" id="fechanacli" class="fechanacli" ></td>
+            <td><input type="submit" value="Actualizar" name="btnactc" id="btnactc" class="btnactc"></td>
+            <td><input type="submit" value="Eliminar" name="btnelic" id="btnelic" class="btnelic"></td>
+
+        </tr>
+        <%})%>
+    </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/actualizarcliente.js"></script>
+    <script src="./js/eliminarcliente.js"></script>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="stylesheet" href="./css/style copy.css">
+</head>
+<body>
+    <h1>Datos de los Clientes</h1>
+
+       <table class="registros">
+        <thead>
+            <tr> 
+                <th>Nombres</th>
+                <th>Documento</th>
+                <th>Apellidos</th>
+                <th>Correo</th>
+                <th>Celular</th>
+                <th>Sexo</th>
+                <th>Fecha de Nacimiento</th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            <% addatosc.forEach(function (addatosc){ %>
+        <tr>
+            <td><input type="text" value="<%=addatosc.nomcli%>" name="nomcli" id="nomcli" class="nomcli"></td>
+            <td><input type="text" value="<%=addatosc.doccli%>" name="doccli" id="doccli" class="doccli" readonly></td>
+            <td><input type="text" value="<%=addatosc.apecli%>" name="apecli" id="apecli" class="apecli"></td>
+            <td><input type="text" value="<%=addatosc.correocli%>" name="correocli" id="correocli" class="correocli" ></td>
+            <td><input type="text" value="<%=addatosc.celulra%>" name="celulra" id="celulra" class="celulra" ></td>
+            <td><input type="text" value="<%=addatosc.sexo%>" name="sexo" id="sexo" class="sexo" ></td>
+            <td><input type="text" value="<%=addatosc.fechanacli%>" name="fechanacli" id="fechanacli" class="fechanacli" ></td>
+
+
+        </tr>
+        <%})%>
+    </tbody>
+    </table>
+</body>
+</html>
